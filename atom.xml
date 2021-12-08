@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ACodingDay.github.io</id>
     <title>ACodingDay</title>
-    <updated>2021-12-05T06:03:46.955Z</updated>
+    <updated>2021-12-08T09:44:19.137Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ACodingDay.github.io"/>
     <link rel="self" href="https://ACodingDay.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://ACodingDay.github.io/images/avatar.png</logo>
     <icon>https://ACodingDay.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, ACodingDay</rights>
+    <entry>
+        <title type="html"><![CDATA[实用软件推荐]]></title>
+        <id>https://ACodingDay.github.io/post/3/</id>
+        <link href="https://ACodingDay.github.io/post/3/">
+        </link>
+        <updated>2021-12-08T04:44:28.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Typora 收费了]]></title>
         <id>https://ACodingDay.github.io/post/2/</id>

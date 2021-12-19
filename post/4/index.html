@@ -1,0 +1,408 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Fiddler + Postman 登录校园网 - ACodingDay</title>
+<link rel="shortcut icon" href="https://ACodingDay.github.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://ACodingDay.github.io/media/css/tailwind.css">
+<link rel="stylesheet" href="https://ACodingDay.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Fiddler + Postman 登录校园网 - ACodingDay - Atom Feed" href="https://ACodingDay.github.io/atom.xml">
+
+    
+
+  <meta name="description" content="前言
+以前学校用的是二级宽带「鹏博士 - 长城宽带」拨号，再搭配百度网盘下载，苦不堪言 😅！后来换了联通宽带，价格也降了，才能愉快地上网冲浪。
+但联通宽带的体验也不完美，因为有时候网络会莫明其妙地被强制下线了，那时我正处于游戏 / 视频面..." />
+  <meta property="og:title" content="Fiddler + Postman 登录校园网 - ACodingDay">
+  <meta property="og:description" content="前言
+以前学校用的是二级宽带「鹏博士 - 长城宽带」拨号，再搭配百度网盘下载，苦不堪言 😅！后来换了联通宽带，价格也降了，才能愉快地上网冲浪。
+但联通宽带的体验也不完美，因为有时候网络会莫明其妙地被强制下线了，那时我正处于游戏 / 视频面..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://ACodingDay.github.io/post/4/" />
+  <meta property="og:image" content="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/Tools2.jpg">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="Fiddler + Postman 登录校园网 - ACodingDay">
+  <meta name="twitter:description" content="前言
+以前学校用的是二级宽带「鹏博士 - 长城宽带」拨号，再搭配百度网盘下载，苦不堪言 😅！后来换了联通宽带，价格也降了，才能愉快地上网冲浪。
+但联通宽带的体验也不完美，因为有时候网络会莫明其妙地被强制下线了，那时我正处于游戏 / 视频面...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://ACodingDay.github.io/post/4/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://ACodingDay.github.io/media/css/prism-atom-dark.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://ACodingDay.github.io" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      ACodingDay
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          Fiddler + Postman 登录校园网
+        </h1>
+        
+          <img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/Tools2.jpg" alt="Fiddler + Postman 登录校园网" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2021-12-18 · 8 min read</div>
+          
+            <a href="https://ACodingDay.github.io/tag/qxPU34ijR/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              折腾
+            </a>
+          
+            <a href="https://ACodingDay.github.io/tag/57bwPDO8H/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              Windows
+            </a>
+          
+            <a href="https://ACodingDay.github.io/tag/zGg4pq9MF/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              软件
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h2 id="前言">前言</h2>
+<p>以前学校用的是二级宽带「鹏博士 - 长城宽带」拨号，再搭配百度网盘下载，苦不堪言 😅！后来换了联通宽带，价格也降了，才能愉快地上网冲浪。<br>
+但联通宽带的体验也不完美，因为有时候网络会莫明其妙地被强制下线了，那时我正处于游戏 / 视频面试 / 在线考试 / 观看比赛......甚至有时候会登录不上，很烦 😤。</p>
+<h2 id="分析">分析</h2>
+<p>有时候，手机链接校园网 WiFi ，信号满格，账号密码也正确，但就是在显示“获取 IP 地址中”，登录不上。过了一段时间再尝试又可以了。<br>
+我的猜测：校园网 WiFi 分配的 IP 地址是 DHCP 动态分配的，而连接的设备数已经达到无线路由器的连接数最大值，所以分配不到 IP 地址。</p>
+<p>电脑是插网线连接以太网的，打开浏览器登录自助管理后台查看，下线的原因有几种：<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/NetworkOffline.png" alt="主要原因" loading="lazy"></p>
+<ul>
+<li>其中，“运营商主动下线”占据了大部分，这种情况也不奇怪：<a href="https://tieba.baidu.com/p/6723485550">百度贴吧 - 路由器吧</a></li>
+<li>字面意思理解“空闲超时”——为避免浪费带宽，某些局域网 / 共享式宽带接入的 ISP 通常会设置无操作下线时限，如果用户在规定的时间内无网络请求，线路上没有业务流量，就会自动断网。</li>
+<li>“清单拆分”，我不理解。</li>
+<li>“管理员重置”，我无法阻止。</li>
+</ul>
+<p>既然无法阻止断网，断网的时间也无规律可循，那只能在断网后及时重新登录了。<br>
+我在想，既然是在浏览器中使用表单登录，那是否能通过抓包数据获取到登录网络的必要数据呢？</p>
+<h2 id="折腾">折腾</h2>
+<h3 id="fiddler-抓包">Fiddler 抓包</h3>
+<p><a href="https://www.telerik.com/fiddler">Fiddler</a> 是强大的抓包工具，能够记录所有客户端和服务器的 HTTP 和 HTTPS 请求，允许监视、设置断点，查看所有的“进出” Fiddler 的数据。<br>
+Fiddler 官网中有几款不同定位的产品，一般说的 Fiddler 都是指 <a href="https://www.telerik.com/fiddler/fiddler-classic"><code>Fiddler Classic</code></a>。</p>
+<p>略过软件的那些下载与安装步骤，直接开始使用工具。</p>
+<ol>
+<li>先设置允许捕获 HTTPS 流量：点击顶部工具栏“Tools”，点击第一个子菜单“Options...”，展开的界面如下所示：点击“HTTPS”选项，将“Capture HTTPS CONNECTS”、“Decrypt HTTPS traffic”勾选上，这分别是允许捕获 HTTPS 请求、解密 HTTPS 流量。如果是第一次使用，勾选之后会提示你安装一个证书，这个证书是用来做中间人进行抓包的，Fiddler 使用此证书来解密所捕获到的流量，再加密转发到相对应的服务器端或客户端。<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/FStep1.png" alt="设置步骤1" loading="lazy"><br>
+如果没有安装过，点击“Yes”安装即可；如果没有弹框提示安装，可以点击“Actions”按钮，进行安装。</li>
+<li>接着选择需要捕获的 HTTPS 流量：在下拉列表中，有 4 种选择：<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/FStep2.png" alt="设置步骤2" loading="lazy">
+<ul>
+<li><code>from all processes</code>：抓取所有进程的 HTTPS 流量；</li>
+<li><code>from browsers only</code>：只抓取浏览器的 HTTPS 流量；</li>
+<li><code>from non-browsers only</code>：只抓取除了浏览器以外的所有 HTTPS 流量；</li>
+<li><code>from remote clients only</code>：只抓取远程客户端的 HTTPS 流量。<br>
+这里选择第 2 种。</li>
+</ul>
+</li>
+<li>然后设置连接的相关信息：点击顶部的“Connections”选项，这里只需要设置监听的端口号，其他默认。你可以将“Fiddler Classiclistens on port”中的默认端口号 <code>8888</code> 改为你想要的（不要与常用服务的默认端口号相冲突），我这里改为 <code>8889</code>。<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/FStep3.png" alt="设置步骤3" loading="lazy"></li>
+<li>搞定 Fiddler 的设置后，接着需要对浏览器进行设置：打开浏览器，安装 “Proxy SwitchyOmega”扩展插件。如果你无法访问 <a href="https://chrome.google.com/webstore/category/extensions?hl=zh">Chrome 扩展商店</a>，那就打开 <a href="https://microsoftedge.microsoft.com/addons/Microsoft-Edge-Extensions-Home">Edge 扩展商店</a> 安装，或者打开 <a href="https://crxdl.com/">CrxDL.COM</a> 下载离线安装包。<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/ProxySwitchyOmega.png" alt="安装此插件" loading="lazy"></li>
+<li>打开“Proxy SwitchyOmega”扩展的设置，如下图所示（已完成效果）：先点击“新建情景模式”，会弹窗让你填写，“情景模式名称”随意填写，为了方便，我这里填写为“fiddler”，其他默认，点击“创建”。“代理服务器”输入框中，“代理协议”选择“HTTP”，“代理服务器”为本地地址，“代理端口”为之前在 Fiddler 中设置的监听端口号。最后点击“应用选项”来保存设置。<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/ProxyStep1.png" alt="完成设置" loading="lazy"></li>
+<li>最后启用该扩展，点击选择刚才设置的情景模式“fiddler”来使用，即可开始抓包。<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/startUseProxy.png" alt="开始使用" loading="lazy"></li>
+<li>打开 Fiddler 后，在浏览器地址栏中输入“1.1.1.1”，自动进入到校园网登录界面。在 Fiddler 中，可以看到捕获到的信息，如下图所示：<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/CaptureResult.png" alt="捕获结果" loading="lazy"><br>
+在左侧上方可以看到各列头，分别是：
+<ul>
+<li><code>Result</code>：HTTP 状态码，例如 302 就是重定向，200 就是请求成功。</li>
+<li><code>Protocol</code>：请求协议，例如 HTTP / HTTPS / FTP。</li>
+<li><code>Host</code>：请求地址的主机名，例如我输入的“1.1.1.1”。</li>
+<li><code>URL</code>：请求资源的位置。</li>
+<li><code>Body</code>：请求的大小。</li>
+<li><code>Caching</code>：请求的缓存过期时间或缓存控制值。</li>
+<li><code>Content-Type</code>：请求响应的类型。</li>
+<li><code>Process</code>：发送该请求的进程的 ID。</li>
+</ul>
+</li>
+<li>如果觉得 Fiddler 的字体太小了，点击“Appearance”选项，可以修改字体及其大小，如下所示：<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/FStep4.png" alt="设置字体" loading="lazy"></li>
+</ol>
+<h3 id="分析源代码">分析源代码</h3>
+<ol>
+<li>鼠标双击左边的请求，会在右边显示具体的信息。分析一下，就大概知道：在浏览器地址栏输入“1.1.1.1”后重定向到“http://1.1.1.1:8888/webauth.do?wlanacname=&amp;wlanuserip=&amp;mac=&amp;act=LOGINSUCC&amp;errorMsg=运营商网络拨号成功&amp;url=http://1.1.1.1”，即地址栏显示的内容（关键信息省去），同时也可以知道这是一个 GET 请求，以及 port、wlanacname、wlanuserip、act、url 等信息，还看到一个临时的 Cookie......在右侧界面的下方返回的是加密后的内容，点击解密一看就明白是登录界面的 HTML 文件代码，对应了“text/html;charset=utf-8”。</li>
+<li>在浏览器按 <code>F12</code> 打开控制台，点击“检查元素”，对着“登录”按钮，查看按钮的点击事件。<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/checkCode.png" alt="查找源代码" loading="lazy"></li>
+<li>在网页中检查源码发现，在按钮的点击函数中只有一个函数 <code>limitSubmit()</code>，这个函数的作用是统计点击登录按钮的次数，一旦点击过快就会提示，然后触发函数 <code>subCheckParam()</code>，这个函数的作用是检查表单提交的参数，一旦输入为空、未勾选就提示，最后提交。<pre><code>$(&quot;#goLoginForm&quot;).attr(&quot;action&quot;, &quot;/webauth.do?&quot; + urlPam).submit();
+</code></pre>
+可以看到表单的提交地址附加了一个参数 <code>urlPam</code>，而恰好这个完整的地址就是地址栏的链接。</li>
+</ol>
+<h3 id="postman-调试">Postman 调试</h3>
+<p>虽然 Fiddler 也有模拟请求的功能，但我还是习惯使用 <a href="https://www.postman.com/">Postman</a>。<br>
+已经得到了表单的提交地址，Fiddler 提供了方便的查看方式，其中包括 Headers、WebForms、Cookies、Raw、JSON 等，点击“Raw”，将其复制填写到 Postman 中，如果觉得不好复制，可以点击右下角的“View in Notepad”（用记事本打开）。<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/rawHeadersParm.png" alt="Raw格式" loading="lazy"></p>
+<p>Postman 中，首先选择提交方式为 POST，然后输入提交地址，在“Headers”选项中填写上述的数据，<br>
+在“Body”选项中填写登录表单的参数，如下图所示：<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/PStep1.png" alt="Headers数据" loading="lazy"></p>
+<p>登录表单的参数，一开始我以为只有用户账号、用户密码、记住我这三个，但始终登录不成功。后来在 Fiddler 中点击“WebForms”查看参数，才发现居然有将近 20 个！还好 Postman 也提供“Raw”格式的数据，直接复制粘贴。<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/Pstep2.png" alt="登录参数" loading="lazy"></p>
+<h3 id="后续">后续</h3>
+<p>拿到了登录参数之后，浏览器点击下线，然后使用 Postman 提交表单模拟登录成功了。<br>
+但是我的初衷是，检测到断网后可以自动化登录，而不仅仅是用 Postman 去登录，毕竟打开 Postman 点击“Send”按钮和打开浏览器点击“登录”按钮一样，没省什么步骤。<br>
+用 Python 编写程序再打包成 EXE 文件，还是编写 Windows 批处理文件更方便？🤔</p>
+<h2 id="参考">参考</h2>
+<ol>
+<li><a href="https://juejin.cn/post/7029604762655916063">稀土掘金 - 笑笑猫爱小小鱼</a></li>
+<li><a href="https://blog.csdn.net/weixin_42724501/article/details/120280822">CSDN - Fiddler Classic</a></li>
+</ol>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E5%88%86%E6%9E%90">分析</a></li>
+<li><a href="#%E6%8A%98%E8%85%BE">折腾</a>
+<ul>
+<li><a href="#fiddler-%E6%8A%93%E5%8C%85">Fiddler 抓包</a></li>
+<li><a href="#%E5%88%86%E6%9E%90%E6%BA%90%E4%BB%A3%E7%A0%81">分析源代码</a></li>
+<li><a href="#postman-%E8%B0%83%E8%AF%95">Postman 调试</a></li>
+<li><a href="#%E5%90%8E%E7%BB%AD">后续</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%82%E8%80%83">参考</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://ACodingDay.github.io/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://ACodingDay.github.io/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'bD8hSVDLDm7muV7Wj9JU43dW-gzGzoHsz',
+    appKey: 'x1T4YaSJCqVxlSDzxkELHKwd',
+    pageSize: 10,
+    notify: false,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '来都来了，不妨评论一下',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>

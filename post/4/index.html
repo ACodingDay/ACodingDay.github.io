@@ -140,20 +140,14 @@ Fiddler 官网中有几款不同定位的产品，一般说的 Fiddler 都是指
 </ol>
 <h3 id="分析源代码">分析源代码</h3>
 <ol>
-<li>
-<p>鼠标双击左边的请求，会在右边显示具体的信息。分析一下，就大概知道：在浏览器地址栏输入“1.1.1.1”后重定向到“http://1.1.1.1:8888/webauth.do?wlanacname=&amp;wlanuserip=&amp;mac=&amp;act=LOGINSUCC&amp;errorMsg=运营商网络拨号成功&amp;url=http://1.1.1.1”，即地址栏显示的内容（关键信息省去），同时也可以知道这是一个 GET 请求，以及 port、wlanacname、wlanuserip、act、url 等信息，还看到一个临时的 Cookie......在右侧界面的下方返回的是加密后的内容，点击解密一看就明白是登录界面的 HTML 文件代码，对应了“text/html;charset=utf-8”。</p>
-</li>
-<li>
-<p>在浏览器按 <code>F12</code> 打开控制台，点击“检查元素”，对着“登录”按钮，查看按钮的点击事件。<br>
-<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/checkCode.png" alt="查找源代码" loading="lazy"></p>
-</li>
-<li>
-<p>在网页中检查源码发现，在按钮的点击函数中只有一个函数 <code>limitSubmit()</code>，这个函数的作用是统计点击登录按钮的次数，一旦点击过快就会提示，然后触发函数 <code>subCheckParam()</code>，这个函数的作用是检查表单提交的参数，一旦输入为空、未勾选就提示，最后提交。</p>
+<li>鼠标双击左边的请求，会在右边显示具体的信息。分析一下，就大概知道：在浏览器地址栏输入“1.1.1.1”后重定向到“http://1.1.1.1:8888/webauth.do?wlanacname=&amp;wlanuserip=&amp;mac=&amp;act=LOGINSUCC&amp;errorMsg=运营商网络拨号成功&amp;url=http://1.1.1.1”，即地址栏显示的内容（关键信息省去），同时也可以知道这是一个 GET 请求，以及 port、wlanacname、wlanuserip、act、url 等信息，还看到一个临时的 Cookie......在右侧界面的下方返回的是加密后的内容，点击解密一看就明白是登录界面的 HTML 文件代码，对应了“text/html;charset=utf-8”。</li>
+<li>在浏览器按 <code>F12</code> 打开控制台，点击“检查元素”，对着“登录”按钮，查看按钮的点击事件。<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/checkCode.png" alt="查找源代码" loading="lazy"></li>
+<li>在网页中检查源码发现，在按钮的点击函数中只有一个函数 <code>limitSubmit()</code>，这个函数的作用是统计点击登录按钮的次数，一旦点击过快就会提示，然后触发函数 <code>subCheckParam()</code>，这个函数的作用是检查表单提交的参数，一旦输入为空、未勾选就提示，最后提交。</li>
+<li>可以看到表单的提交地址附加了一个参数 <code>urlPam</code>，而恰好这个完整的地址就是地址栏的链接。</li>
+</ol>
 <pre><code>$(&quot;#goLoginForm&quot;).attr(&quot;action&quot;, &quot;/webauth.do?&quot; + urlPam).submit();
 </code></pre>
-<p>可以看到表单的提交地址附加了一个参数 <code>urlPam</code>，而恰好这个完整的地址就是地址栏的链接。</p>
-</li>
-</ol>
 <h3 id="postman-调试">Postman 调试</h3>
 <p>虽然 Fiddler 也有模拟请求的功能，但我还是习惯使用 <a href="https://www.postman.com/">Postman</a>。<br>
 已经得到了表单的提交地址，Fiddler 提供了方便的查看方式，其中包括 Headers、WebForms、Cookies、Raw、JSON 等，点击“Raw”，将其复制填写到 Postman 中，如果觉得不好复制，可以点击右下角的“View in Notepad”（用记事本打开）。<br>

@@ -1,0 +1,355 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>体验卡饭输入法 - ACodingDayBlog</title>
+<link rel="shortcut icon" href="https://ACodingDay.github.io/favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css">
+<link rel="stylesheet" href="https://ACodingDay.github.io/media/css/tailwind.css">
+<link rel="stylesheet" href="https://ACodingDay.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="体验卡饭输入法 - ACodingDayBlog - Atom Feed" href="https://ACodingDay.github.io/atom.xml">
+
+    
+
+  <meta name="description" content="前言
+最近在使用的一款 PC 端输入法：卡饭输入法，Logo 的配色很不错，这种蓝色看起来比较舒服。例如，字节跳动的团队协作软件 飞书、远程桌面控制软件 ToDesk 也是这种相似的配色方案。
+
+词库
+这款输入法，我是在卡饭论坛的官方软件分..." />
+  <meta property="og:title" content="体验卡饭输入法 - ACodingDayBlog">
+  <meta property="og:description" content="前言
+最近在使用的一款 PC 端输入法：卡饭输入法，Logo 的配色很不错，这种蓝色看起来比较舒服。例如，字节跳动的团队协作软件 飞书、远程桌面控制软件 ToDesk 也是这种相似的配色方案。
+
+词库
+这款输入法，我是在卡饭论坛的官方软件分..." />
+  <meta property="og:type" content="articles">
+  <meta property="og:url" content="https://ACodingDay.github.io/post/9/" />
+  <meta property="og:image" content="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Titlepics/017.jpg">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:width" content="1200">
+  <meta name="twitter:title" content="体验卡饭输入法 - ACodingDayBlog">
+  <meta name="twitter:description" content="前言
+最近在使用的一款 PC 端输入法：卡饭输入法，Logo 的配色很不错，这种蓝色看起来比较舒服。例如，字节跳动的团队协作软件 飞书、远程桌面控制软件 ToDesk 也是这种相似的配色方案。
+
+词库
+这款输入法，我是在卡饭论坛的官方软件分...">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://ACodingDay.github.io/post/9/">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+ 
+  
+    <link rel="stylesheet" href="https://ACodingDay.github.io/media/css/prism-atom-dark.css">
+  
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  
+</head>
+
+<body>
+  <div class="antialiased flex flex-col min-h-screen" id="app">
+    <a href="https://ACodingDay.github.io" class="fixed top-0 left-0 mt-4 bg-black text-white dark:text-gray-700 dark:bg-yellow-50 dark:hover:bg-black dark:hover:text-white inline-flex p-2 pl-8 hover:text-gray-700 hover:bg-yellow-50 font-bold z-10 transition-fast animated fadeInLeft">
+      ACodingDayBlog
+    </a>
+    <div class="max-w-4xl w-full mx-auto">
+      <div class="shadow-box bg-white dark:bg-gray-600 rounded-lg pt-32 md:pt-64 px-4 md:px-8 pb-8 animated fadeIn mb-8">
+        <h1 class="text-5xl font-semibold leading-normal pb-8 mb-8 border-b-8 border-gray-700">
+          体验卡饭输入法
+        </h1>
+        
+          <img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Titlepics/017.jpg" alt="体验卡饭输入法" class="block w-full mb-8">
+        
+        <div class="mb-8 flex flex-wrap">
+          <div class="text-gray-400 text-sm mr-4">2022-03-02 · 3 min read</div>
+          
+            <a href="https://ACodingDay.github.io/tag/qxPU34ijR/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              折腾
+            </a>
+          
+            <a href="https://ACodingDay.github.io/tag/zGg4pq9MF/" class="text-gray-700 text-sm border-b-2 border-dotted border-gray-200 hover:border-gray-600 transition-all duration-100 inline-flex mr-2">
+              <i class="ri-hashtag"></i>
+              软件
+            </a>
+          
+        </div>
+        <div class="markdown mb-8" v-pre>
+          <h2 id="前言">前言</h2>
+<p>最近在使用的一款 PC 端输入法：<a href="https://input.kfsafe.cn/">卡饭输入法</a>，Logo 的配色很不错，这种蓝色看起来比较舒服。例如，字节跳动的团队协作软件 <a href="https://www.feishu.cn/">飞书</a>、远程桌面控制软件 <a href="https://www.todesk.com/">ToDesk</a> 也是这种相似的配色方案。<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/kafanInput.png" alt="两者配色相似" loading="lazy"></p>
+<h2 id="词库">词库</h2>
+<p>这款输入法，我是在卡饭论坛的<a href="https://bbs.kafan.cn/forum-297-1.html">官方软件分区</a>看到的，抱着尝尝鲜的心态去下载使用。体验了一周，总的来说，基本没出现 Bug，而且有些细节确实让我有些惊喜。当然，与科大讯飞、百度（收购了搜狗）、腾讯等互联网大厂的输入法产品相比，卡饭输入法的登录、词库、语音等模块尚未成熟甚至缺失，自然是略输一筹。</p>
+<p>如果你使用过<a href="https://srf.xunfei.cn/">讯飞输入法</a>，应该清楚对讯飞的语音识别准确率有所认知，搭配它的录音笔简直如虎添翼；<a href="https://pinyin.sogou.com/">搜狗输入法</a>在某一段时间内都会有弹窗，烦不胜烦，果断卸载了；百度输入法在众多输入法中算发力较晚的，但一直在稳定更新(最近更新：2022-02-07)；<a href="http://qq.pinyin.cn/">QQ 输入法</a> 的皮肤对于我来说，毫无吸引力。</p>
+<p>目前的卡法输入法没有官方词库提供下载，需要用户自己导入 <em>.dict</em> 或者 <em>.txt</em> 格式的词库。<br>
+虽然以上所述各个大厂都有自己的词库，提供免费下载，但是文件的格式都不统一：😑</p>
+<ul>
+<li>百度输入法的词库文件后缀名为 <em>.bdict</em>；</li>
+<li>搜狗输入法的词库文件后缀名为 <em>.scel</em>；</li>
+<li>QQ 输入法的词库文件后缀名为 <em>.qpyd</em>；<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/dictWord.png" alt="格式不统一" loading="lazy"></li>
+</ul>
+<h2 id="折腾">折腾</h2>
+<p>最方便的方案：下载搜狗输入法的词库，再使用<a href="https://github.com/studyzy/imewlconverter">深蓝词库转换工具</a>，把词库转换为转换成中州韵格式，或者对应的 <em>.txt</em> 文本格式。<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/KFimportData.png" alt="格式说明和示例" loading="lazy"><br>
+但是有时候导入词库会莫名失败：😐<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/KFerror.png" alt="部分成功部分失败" loading="lazy"></p>
+<h2 id="体验">体验</h2>
+<p>除了本地词库拓展词库，成熟的输入法还需要词语联想、记住输入偏好、U 模式、V 模式、自定义短语等功能。<br>
+当你在游戏中愉快玩耍时，又不想切屏出来看时间，不妨在输入法中使用简拼，还可以知道当前的农历。<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/KFjp.png" alt="获取日期" loading="lazy"><br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/KFjp2.png" alt="获取时间" loading="lazy"><br>
+遇到不会的生僻字，先输入一个字母 u，再输入该字的组成部分。<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/KFu1.png" alt="U模式输入生僻字" loading="lazy"><br>
+但是只出现拼音，没有对应的读音。<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/KFu2.png" alt="U模式没有读音" loading="lazy"><br>
+对于不好拆分部首的汉字，可以拆分笔画，这点卡饭输入法也有提示。<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/KFu3.png" alt="U模式提示" loading="lazy"><br>
+V 模式可以帮助我们进行简单的四则运算。<br>
+<img src="https://mytc2020-1300758689.cos.ap-guangzhou.myqcloud.com/Gridea/KFv1.png" alt="V模式计算" loading="lazy"><br>
+除了常用的繁简体切换、五笔字、字体设置，还有高级的快捷键设置、云输入、动态纠错、自定义短语。<br>
+遗憾的是，没有百度输入法的符号工具箱：可以输入制表符、序号、罗马数字、特殊符号......</p>
+<h2 id="参考">参考</h2>
+<ol>
+<li><a href="https://sspai.com/post/52101#!">少数派</a></li>
+<li><a href="https://www.168seo.cn/python/25079.html">百度输入法的词库 bdict 转 txt</a></li>
+</ol>
+
+        </div>
+        <!-- Share to Twitter, Weibo, Telegram -->
+        <div class="flex items-center">
+          <div class="mr-4 flex items-center">
+            <i class="ri-share-forward-line text-gray-500"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-blue-500 hover:bg-blue-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTwitter">
+            <i class="ri-twitter-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-red-500 hover:bg-red-100 dark:hover:bg-gray-600 inline-flex" @click="shareToWeibo">
+            <i class="ri-weibo-line"></i>
+          </div>
+          <div class="px-4 cursor-pointer text-indigo-500 hover:bg-indigo-100 dark:hover:bg-gray-600 inline-flex" @click="shareToTelegram">
+            <i class="ri-telegram-line"></i>
+          </div>
+        </div>
+      </div>
+
+      
+
+      
+        <div id="vlaine-comment"></div>
+      
+
+      <footer class="py-12 text-center px-4 md:px-0" v-pre>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+</footer>
+    </div>
+
+    <!-- TOC Container -->
+    <div class="fixed right-0 bottom-0 mb-16 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white dark:bg-gray-500 dark:text-gray-200 hover:shadow-lg transition-all animated fadeInRight" @click="showToc = true">
+      <i class="ri-file-list-line"></i>
+    </div>
+
+    <div class="fixed right-0 top-0 bottom-0 overflow-y-auto w-64 bg-white dark:bg-gray-800 p-4 border-l border-gray-100 dark:border-gray-600 z-10 transition-fast" :class="{ '-mr-64': !showToc }">
+      <div class="flex mb-4 justify-end">
+        <div class="w-8 h-8 inline-flex justify-center items-center rounded-full cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 transition-fast" @click="showToc = false">
+          <i class="ri-close-line text-lg"></i>
+        </div>
+      </div>
+      <div class="post-toc-container">
+        <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E5%89%8D%E8%A8%80">前言</a></li>
+<li><a href="#%E8%AF%8D%E5%BA%93">词库</a></li>
+<li><a href="#%E6%8A%98%E8%85%BE">折腾</a></li>
+<li><a href="#%E4%BD%93%E9%AA%8C">体验</a></li>
+<li><a href="#%E5%8F%82%E8%80%83">参考</a></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <div class="fixed right-0 bottom-0 mb-4 mr-4 shadow w-8 h-8 rounded-full flex justify-center items-center z-10 cursor-pointer bg-white hover:shadow-lg transition-all dark:bg-gray-500 dark:text-gray-200" @click="backToUp" v-show="scrolled">
+      <i class="ri-arrow-up-line"></i>
+    </div>
+  </div>
+
+  <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Background of PhotoSwipe. 
+        It's a separate element as animating opacity is faster than rgba(). -->
+  <div class="pswp__bg">
+  </div>
+  <!-- Slides wrapper with overflow:hidden. -->
+  <div class="pswp__scroll-wrap">
+    <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+    <div class="pswp__container">
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+      <div class="pswp__item">
+      </div>
+    </div>
+    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+    <div class="pswp__ui pswp__ui--hidden">
+      <div class="pswp__top-bar">
+        <!--  Controls are self-explanatory. Order can be changed. -->
+        <div class="pswp__counter">
+        </div>
+        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+        <!-- element will get class pswp__preloader--active when preloader is running -->
+        <div class="pswp__preloader">
+          <div class="pswp__preloader__icn">
+            <div class="pswp__preloader__cut">
+              <div class="pswp__preloader__donut">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+        <div class="pswp__share-tooltip">
+        </div>
+      </div>
+      <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+      </button>
+      <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+      </button>
+      <div class="pswp__caption">
+        <div class="pswp__caption__center">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://ACodingDay.github.io/media/scripts/main.js"></script>
+  
+  <!-- Code Highlight -->
+  
+    <script src="https://ACodingDay.github.io/media/prism.js"></script>
+    <script>
+      Prism.highlightAll()
+    </script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+  <script>
+    //拿到预览框架，也就是上面的html代码
+    var pswpElement = document.querySelectorAll('.pswp')[0];
+    //定义图片数组变量
+    var imgitems;
+    /**
+    * 用于显示预览界面
+    * @param index 图片数组下标
+    */
+    function viewImg(index) {
+      //其它选项这里不做过多阐述，详情见官网
+      var pswpoptions = {
+        index: parseInt(index, 10), // 开始幻灯片索引。0是第一张幻灯片。必须是整数，而不是字符串。
+        bgOpacity: 0.7, // 背景透明度，0-1
+        maxSpreadZoom: 3, // 缩放级别，不要太大
+      };
+      //初始化并打开PhotoSwipe，pswpElement对应上面预览框架，PhotoSwipeUI_Default为皮肤，imgitems为图片数组，pswpoptions为选项
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, imgitems, pswpoptions);
+      gallery.init()
+    }
+    /**
+    * 用于添加图片点击事件
+    * @param img 图片元素
+    * @param index 所属下标（在imgitems中的位置）
+    */
+    function addImgClick(img, index) {
+      img.onclick = function() {
+        viewImg(index)
+      }
+    }
+    /**
+    * 轮询所有图片，获取src、width、height等数据，加入imgitems，并给图片元素添加事件
+    * 最好在onload中执行该方法，本站因放在最底部，所以直接初始化
+    * 异步加载图片可在图片元素创建完成后调用此方法
+    */
+    function initImg() {
+      //重置图片数组
+      imgitems = [];
+      //查找class:markdown 下的所有img元素并遍历
+      var imgs = document.querySelectorAll('.markdown img');
+      for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        //本站相册初始为loading图片，真实图片放在data-src
+        var ds = img.getAttribute("data-src");
+        //创建image对象，用于获取图片宽高
+        var imgtemp = new Image();
+        //判断是否存在data-src
+        if (ds != null && ds.length > 0) {
+          imgtemp.src = ds
+        } else {
+          imgtemp.src = img.src
+        }
+        //判断是否存在缓存
+        if (imgtemp.complete) {
+          var imgobj = {
+            "src": imgtemp.src,
+            "w": imgtemp.width,
+            "h": imgtemp.height,
+          };
+          imgitems[i] = imgobj;
+          addImgClick(img, i);
+        } else {
+          console.log('进来了2')
+          imgtemp.index = i;
+          imgtemp.img = img;
+          imgtemp.onload = function() {
+            var imgobj = {
+              "src": this.src,
+              "w": this.width,
+              "h": this.height,
+            };
+            //不要使用push，因为onload前后顺序会不同
+            imgitems[this.index] = imgobj
+            //添加点击事件
+            addImgClick(this.img, this.index);
+          }
+        }
+      }
+    }
+    //初始化
+    initImg();
+  </script>
+  
+    <script type="application/javascript" src="https://unpkg.com/valine"></script>
+<script type="application/javascript">
+  new Valine({
+    el: '#vlaine-comment',
+    appId: 'bD8hSVDLDm7muV7Wj9JU43dW-gzGzoHsz',
+    appKey: 'x1T4YaSJCqVxlSDzxkELHKwd',
+    pageSize: 10,
+    notify: false,
+    avatar: 'mp',
+    verify: true,
+    placeholder: '来都来了，不妨评论一下',
+    visitor: true,
+    highlight: true,
+    recordIP: true,
+  })
+</script>
+  
+  
+</body>
+
+</html>
